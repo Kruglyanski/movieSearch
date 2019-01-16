@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -86,3 +87,93 @@
   margin: 6vh auto;
   position: relative;
 }
+=======
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 50%;
+  font-family: inherit;
+  min-height: 78vh;
+}
+
+/* films bar */
+
+.movie-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.load-btn {
+  margin-top: 20px;
+  background-color: rgb(37, 37, 37);
+  color: white;
+  border: 1px solid rgb(30, 30, 30);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.load-btn:hover {
+  background-color: rgb(34, 34, 34);
+  color: rgb(175, 111, 52);
+  border: 1px solid rgb(175, 111, 52);
+}
+
+.load-btn:active {
+  background-color: gray;
+  background-color: rgb(34, 34, 34);
+  color: rgb(175, 111, 52);
+  border: 1px solid rgb(175, 111, 52);
+}
+
+.load-btn:focus {
+  outline: none;
+}
+
+.details-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.details-header {
+  background-color: #293d3d;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+}
+
+.details-header h1:hover {
+  color: rgb(175, 111, 52);
+  cursor: pointer;
+}
+
+.details-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #293d3d;
+  min-height: 50px;
+  font-size: calc(5px + 1.5vmin);
+  color: white;
+}
+
+.loader{
+  font-size: 2vw;
+  color: #fff;
+  margin: 6vh auto;
+  position: relative;
+}
+>>>>>>> origin/master

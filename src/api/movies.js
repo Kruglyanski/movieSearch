@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // api
 import { get } from './api'
 
@@ -10,3 +11,17 @@ export default {
 
   },
 }
+=======
+// api
+import { get } from './api'
+
+// api key
+import { key } from './api'
+
+export default {
+  apiGetMovies: page => {
+    return get(`3/movie/popular?api_key=${key}&page=${page}`)
+
+  },
+}
+>>>>>>> origin/master
