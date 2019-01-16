@@ -29,8 +29,7 @@ class Movie extends Component {
   componentDidMount() {
     this.props.getGenres()
     this.props.getMovies()
-    this.props.getCategories()
-    this.props.getCategoriesw()
+
   }
 
   render() {
