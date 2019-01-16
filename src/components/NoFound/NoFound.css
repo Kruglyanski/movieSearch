@@ -1,0 +1,26 @@
+.no-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #669999;
+  font-size: calc(10px + 3vmin);
+}
+
+.no-found p {
+  color: white;
+  animation: pulse_color 3s ease-in-out infinite;
+}
+
+@keyframes pulse_color {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgb(177, 115, 58);
+  }
+  100% {
+    color: white;
+  }
+}
