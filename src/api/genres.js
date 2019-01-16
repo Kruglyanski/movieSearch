@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // api
 import { get } from './api'
 
@@ -11,17 +10,3 @@ export default {
 
   },
 }
-=======
-// api
-import { get } from './api'
-
-// api key
-import { key } from './api'
-
-export default {
-  apiGetGenres: page => {
-    return get(`3/genre/movie/list?api_key=${key}`)
-
-  },
-}
->>>>>>> origin/master
