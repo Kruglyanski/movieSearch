@@ -1,0 +1,23 @@
+.sidebar{
+    top: 80px;
+    width: 18vw;
+    display: block;
+    float: left;
+    visibility: visible;
+}
+
+/* search bar */
+
+.search-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 110px;
+}
+
+.ui.mini.icon.input {
+  height: 40px;
+width: 70%;
+}
