@@ -33,7 +33,6 @@ export const getMovies = (force = false) => async (dispatch, getState) => {
   try {
     const page = movies.page + 1
     const result = await api.apiGetMovies(page)
-    console.log('Result', result)
 
     const items = result.results.map(mapper)
 

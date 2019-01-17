@@ -4,6 +4,7 @@
     display: block;
     float: left;
     visibility: visible;
+
 }
 
 /* search bar */
@@ -15,6 +16,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 110px;
+
 }
 
 .ui.mini.icon.input {

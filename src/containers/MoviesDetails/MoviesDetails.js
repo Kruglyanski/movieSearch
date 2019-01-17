@@ -18,6 +18,8 @@ import { imageUrl } from '../../api/api'
 // Actions
 import { getMovies } from '../../actions/movies'
 import { getGenres } from '../../actions/genres'
+
+
 //libs
 import * as  _  from 'lodash'
 
@@ -35,12 +37,10 @@ class Movie extends Component {
   render() {
     const { movie, genresOfMovies } = this.props
     const foundGenres = _.map(movie.genreIds, (item) => _.find(genresOfMovies.genres, {id: item}))
-    {console.log('1',foundGenres)}
     const movieGenresArr = _.reduce(foundGenres, (memo, item) => {
       memo.push(item.name)
       return memo
     }, [])
-    {console.log('1',movieGenresArr)}
     return (
 
       <div className="details-block">
@@ -90,7 +90,6 @@ const mapStateToProps = (state, props) => {
     movies: getMovieList(state),
     movie: getMovieById(movieId)(state) || {},
     genresOfMovies: state.genres.items,
-    //movieGenresArr: state.genres.movieGenresArr,
   }
 
 }

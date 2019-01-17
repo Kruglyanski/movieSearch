@@ -1,8 +1,9 @@
 import React from 'react'
 import { Input } from 'semantic-ui-react'
 import './Sidebar.css'
+import Categories from '../Categories/Categories'
 
-class SidebarDiv extends React.Component  {
+class Sidebar extends React.Component  {
   render() {
     return (
       <div className="ui visible sidebar">
@@ -12,9 +13,10 @@ class SidebarDiv extends React.Component  {
             icon="search"
             onChange={this.props.onInputChangeProp} />
           </section>
+          <Categories />
       </div>
     )
   }
 }
 
-export default SidebarDiv
+export default Sidebar

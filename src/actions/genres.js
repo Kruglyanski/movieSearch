@@ -6,10 +6,7 @@ import { createActions } from 'redux-actions'
 
 // api
 import api from '../api/genres'
-
-//libs
-import * as  _  from 'lodash'
-
+import {getCategories} from './categories'
 
 
 const actions = createActions({
@@ -30,18 +27,12 @@ export const getGenres = (force = false) => async (dispatch, getState) => {
   dispatch(actions.genres.request())
   try {
     const result = await api.apiGetGenres()
-    console.log('Result', result)
-
-
-
     dispatch(
       actions.genres.success({
         items: {...genres.items, ...result},
-
-
       })
-
     )
+    dispatch(getCategories())
   } catch (e) {
     dispatch(actions.genres.error({ error: e }))
     console.log(e)

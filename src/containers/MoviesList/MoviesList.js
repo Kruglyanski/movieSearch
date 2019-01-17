@@ -17,11 +17,13 @@ import Layout from '../../HOC/Layout/Layout'
 
 // components
 import Movie from '../../components/Movie/Movie'
-import SidebarDiv from '../../components/Sidebar/Sidebar'
+import Sidebar from '../../components/Sidebar/Sidebar'
 
 // Actions
 import { getMovies, filterMovies } from '../../actions/movies'
 import { getGenres } from '../../actions/genres'
+import { getCategories } from '../../actions/categories'
+
 // styles
 import './MoviesList.css'
 
@@ -53,7 +55,7 @@ class MoviesList extends Component {
       <Layout>
 
         <div className="main-wrapper" >
-          <SidebarDiv onInputChangeProp={this.onInputChange} />
+          <Sidebar onInputChangeProp={this.onInputChange} />
           <section className="movie-block" >
             <InfiniteScroll
               pageStart={0}
@@ -84,6 +86,7 @@ const mapDispatchToProps = dispatch =>
       getMovies,
       filterMovies,
       getGenres,
+      getCategories,
 
     },
     dispatch
@@ -92,6 +95,7 @@ const mapDispatchToProps = dispatch =>
 MoviesList.propTypes = {
   getMovies: PropTypes.func.isRequired,
   getGenres: PropTypes.func.isRequired,
+  getCategories: PropTypes.func.isRequired,
   filterMovies: PropTypes.func.isRequired,
   movies: PropTypes.instanceOf(Array),
   searchResult: PropTypes.string.isRequired,

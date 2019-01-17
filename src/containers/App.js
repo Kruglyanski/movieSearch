@@ -28,7 +28,7 @@ class App extends Component {
               path="/movie/:id"
               component={MoviesDetails}
             />
-            <Route component={NoFound} />
+
             <Route
               path="/categories/:id"
               component={MoviesList}
