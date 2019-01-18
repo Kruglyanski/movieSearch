@@ -11,14 +11,14 @@ import * as _ from 'lodash'
 import {getCategoriesList} from '../../selectors/movies'
 import {getActiveCategoryId} from '../../selectors/movies'
 
-
+import './Categories.css'
 
 const Categories = ({categories, activeCategoryId}) => {
   console.log('activeCategoryId', activeCategoryId)
-  console.log('caTegories', categories)
-  const renderCategory = (category, index) => {
-    const getActiveState = () => _.isEqual('id', activeCategoryId)
 
+  const renderCategory = (category, index) => {
+    const getActiveState = (category) => category.id == activeCategoryId
+      console.log('getActiveState', getActiveState(category))
     const linkClass = classNames({
       'active': getActiveState(category),
     })

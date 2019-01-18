@@ -72,9 +72,9 @@ class MoviesList extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    movies: getMovieList(state),
+    movies: getMovieList(state, ownProps),
     searchResult: state.movies.result,
     page: state.movies.page,
   }

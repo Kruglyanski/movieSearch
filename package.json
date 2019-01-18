@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.6",
     "event-stream": "^4.0.1",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",

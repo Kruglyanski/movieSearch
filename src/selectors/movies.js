@@ -16,3 +16,10 @@ export const getMovieById = id =>
 export const getCategoriesList = state => state.categories.items// ??????????????
 
 export const getActiveCategoryId = ownProps => ownProps.match.params.id// ????????????????????
+
+//const activeCategoryId = getActiveCategoryId(ownProps)
+
+//onst moviesByGenre = R.compose(
+   // R.when(R.always(activeCategoryId), R.filter(applyCategory))
+//R.map(id => getPhoneById(state, id))
+//)(state.phonesPage.ids)
