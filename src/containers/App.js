@@ -33,6 +33,9 @@ class App extends Component {
               path="/categories/:id"
               component={MoviesList}
             />
+            <Route
+              component={NoFound}
+            />
           </Switch>
         </div>
       </Router>

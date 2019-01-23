@@ -59,13 +59,18 @@ class MoviesList extends Component {
         <div className="main-wrapper" >
           <Sidebar onInputChangeProp={this.onInputChange} />
           <section className="movie-block" >
-
+              <InfiniteScroll
+                  pageStart={0}
+                  loadMore={this.onLoadMoreMovies}
+                  hasMore={!searchResult}
+                  loader={<div className="loader" key={0}>Loading ...</div>}
+              >
             <Movie
               searchResult={searchResult}
               movies={movies}
               activeCategoryId={activeCategoryId}
             />
-
+            </InfiniteScroll>
           </section>
         </div>
       </Layout>
