@@ -25,4 +25,3 @@ export const getCategories = () => (dispatch, getState) => {
     })
   )
 }
-//test

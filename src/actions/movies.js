@@ -16,9 +16,8 @@ const actions = createActions({
     request: x => x,
     success: x => x,
     error: x => x,
-    filter: {
-      success: x => x,
-    },
+    filter: x => x,
+    filterByGenre: x => x,
   },
 })
 
@@ -52,9 +51,9 @@ export const getMovies = (force = false) => async (dispatch, getState) => {
   }
 }
 
-export const filterMovies = value => async dispatch => {
+export const filterMovies = value => dispatch => {
   dispatch(
-    actions.movies.filter.success({
+    actions.movies.filter({
       result: value,
 
     })
@@ -62,4 +61,12 @@ export const filterMovies = value => async dispatch => {
 
 }
 
+export const filterMoviesByGenre = value => dispatch => {
+  dispatch(
+    actions.movies.filterByGenre({
+      resultByGenre: value,
 
+    })
+  )
+
+}

@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux'
 
 // Selectors
 import { getMovieList } from '../../selectors/movies'
-
+import { getActiveCategoryId } from '../../selectors/movies'
 //libs
 import InfiniteScroll from 'react-infinite-scroller'
 
@@ -30,6 +30,7 @@ import './MoviesList.css'
 class MoviesList extends Component {
   componentDidMount() {
     this.props.getGenres()
+    this.props.getMovies()
   }
 
   onInputChange = evt => {
@@ -50,21 +51,21 @@ class MoviesList extends Component {
   //  }
 
   render() {
-    const { movies, searchResult } = this.props
+    const { movies, searchResult, activeCategoryId } = this.props
+
     return (
       <Layout>
 
         <div className="main-wrapper" >
           <Sidebar onInputChangeProp={this.onInputChange} />
           <section className="movie-block" >
-            <InfiniteScroll
-              pageStart={0}
-              loadMore={this.onLoadMoreMovies}
-              hasMore={!searchResult}
-              loader={<div className="loader" key={0}>Loading ...</div>}
-            >
-              <Movie searchResult={searchResult} movies={movies} />
-            </InfiniteScroll>
+
+            <Movie
+              searchResult={searchResult}
+              movies={movies}
+              activeCategoryId={activeCategoryId}
+            />
+
           </section>
         </div>
       </Layout>
@@ -77,6 +78,7 @@ const mapStateToProps = (state, ownProps) => {
     movies: getMovieList(state, ownProps),
     searchResult: state.movies.result,
     page: state.movies.page,
+    activeCategoryId: getActiveCategoryId(ownProps),
   }
 }
 
@@ -87,7 +89,7 @@ const mapDispatchToProps = dispatch =>
       filterMovies,
       getGenres,
       getCategories,
-
+      getActiveCategoryId,
     },
     dispatch
   )
@@ -96,10 +98,12 @@ MoviesList.propTypes = {
   getMovies: PropTypes.func.isRequired,
   getGenres: PropTypes.func.isRequired,
   getCategories: PropTypes.func.isRequired,
+  getActiveCategoryId: PropTypes.func.isRequired,
   filterMovies: PropTypes.func.isRequired,
   movies: PropTypes.instanceOf(Array),
   searchResult: PropTypes.string.isRequired,
   page: PropTypes.number || null,
+  activeCategoryId: PropTypes.number, //??????????
 }
 
 export default connect(

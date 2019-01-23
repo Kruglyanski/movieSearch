@@ -9,14 +9,25 @@ import { Card, Image } from 'semantic-ui-react'
 // api
 import { imageUrl } from '../../api/api'
 
-const movie = ({ movies, searchResult }) => (
+
+const movie = ({ movies, searchResult, activeCategoryId }) => (
 
   <Card.Group itemsPerRow={5}>
     {movies
       .filter(i => {
         const searchStr = `${i.title}`
         return searchStr.toLowerCase().includes(searchResult.toLowerCase())
-
+      })
+      .filter((item) => {
+        if(activeCategoryId == undefined) {
+          return true
+        } else {
+          for (let i = 0; i <= item.genreIds.length; i++) {          //Возможно ли через forEach()????
+            if (item.genreIds[i] === +activeCategoryId) {
+              return item.genreIds[i]
+            }
+          }
+        }
       })
       .map(item => {
         return (
@@ -46,6 +57,7 @@ const movie = ({ movies, searchResult }) => (
 movie.propTypes = {
   movies: PropTypes.instanceOf(Array),
   searchResult: PropTypes.string.isRequired,
+  activeCategoryId: PropTypes.number || null,
 }
 
 export default movie

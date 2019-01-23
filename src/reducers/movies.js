@@ -10,6 +10,7 @@ export const initialState = {
   items: [],
   result: '',
   page: 0,
+  resultByGenre: '',
 }
 
 export default handleActions(
@@ -33,26 +34,17 @@ export default handleActions(
       error: payload.error,
     }),
 
-
-    [actions.movies.filter.request]: state => ({
+    [actions.movies.filter]: (state, { payload }) => ({
       ...state,
-      isFetching: true,
-      error: '',
-    }),
-
-    [actions.movies.filter.success]: (state, { payload }) => ({
-      ...state,
-      isFetching: false,
       result: payload.result,
 
     }),
 
-    [actions.movies.filter.error]: (state, { payload }) => ({
+    [actions.movies.filterByGenre]: (state, { payload }) => ({
       ...state,
-      isFetching: false,
-      error: payload.error,
-    }),
+      result: payload.result,
 
+    }),
   },
   initialState
 )
