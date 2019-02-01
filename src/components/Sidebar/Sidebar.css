@@ -1,25 +1,10 @@
 .sidebar{
-    top: 80px;
-    width: 18vw;
-    display: block;
-    float: left;
-    visibility: visible;
+
+    width: 18%!important;
+    min-width: 100px!important;
+    background-color: #fcfeff;
+    display: flex;
 
 }
 
-/* search bar */
 
-.search-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 110px;
-
-}
-
-.ui.mini.icon.input {
-  height: 40px;
-width: 70%;
-}

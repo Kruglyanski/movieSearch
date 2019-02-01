@@ -54,26 +54,33 @@ class MoviesList extends Component {
     const { movies, searchResult, activeCategoryId } = this.props
 
     return (
-      <Layout>
+      <div>
 
-        <div className="main-wrapper" >
-          <Sidebar onInputChangeProp={this.onInputChange} />
-          <section className="movie-block" >
+        <Layout onInputChangeProp={this.onInputChange}>
+
+          <div className="main-wrapper" >
+            <div className="sidebar-placeholder">
+            </div>
+            <Sidebar  />
+            <section className="movie-block" >
               <InfiniteScroll
-                  pageStart={0}
-                  loadMore={this.onLoadMoreMovies}
-                  hasMore={!searchResult}
-                  loader={<div className="loader" key={0}>Loading ...</div>}
+                className="infinite-scroll"
+                pageStart={0}
+                loadMore={this.onLoadMoreMovies}
+                hasMore={!searchResult}
+                loader={<div className="loader" key={0}>Loading ...</div>}
               >
-            <Movie
-              searchResult={searchResult}
-              movies={movies}
-              activeCategoryId={activeCategoryId}
-            />
-            </InfiniteScroll>
-          </section>
-        </div>
-      </Layout>
+                <Movie
+                  className="cards-wrapper"
+                  searchResult={searchResult}
+                  movies={movies}
+                  activeCategoryId={activeCategoryId}
+                />
+              </InfiniteScroll>
+            </section>
+          </div>
+        </Layout>
+      </div>
     )
   }
 }

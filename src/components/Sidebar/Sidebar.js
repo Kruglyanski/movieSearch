@@ -1,22 +1,20 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react'
+import { Input, Sidebar } from 'semantic-ui-react'
 import './Sidebar.css'
 import Categories from '../Categories/Categories'
+import PropTypes from 'prop-types'
 
-class Sidebar extends React.Component  {
+class SidebarDiv extends React.Component  {
   render() {
     return (
-      <div className="ui visible sidebar">
-          <section className="search-block">
-            <Input
-            size="mini"
-            icon="search"
-            onChange={this.props.onInputChangeProp} />
-          </section>
-          <Categories />
-      </div>
+      <Sidebar visible className="sidebar" >
+
+        <Categories />
+      </Sidebar>
     )
   }
 }
-
-export default Sidebar
+Sidebar.propTypes = {
+  onInputChangeProp: PropTypes.string,
+}
+export default SidebarDiv

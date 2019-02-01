@@ -4,7 +4,7 @@ import { Link,  withRouter } from 'react-router-dom'
 import {compose} from 'redux'
 import { connect } from 'react-redux'
 
-import { List } from 'semantic-ui-react'
+import {List} from 'semantic-ui-react'
 import classNames from 'classnames'
 import * as _ from 'lodash'
 
@@ -18,7 +18,7 @@ const Categories = ({categories, activeCategoryId}) => {
 
   const renderCategory = (category, index) => {
     const getActiveState = (category) => category.id == activeCategoryId
-      console.log('getActiveState', getActiveState(category))
+    console.log('getActiveState', getActiveState(category))
     const linkClass = classNames({
       'active': getActiveState(category),
     })
@@ -50,12 +50,16 @@ const Categories = ({categories, activeCategoryId}) => {
   }
 
   return (
-    <div >
-      <h4>Genre</h4>
-      <List selection verticalAlign='middle'>
-      <List.Item>
+    <div className="category-wrap">
+      <h3>Filter by genres:</h3>
+      <List
+        selection
+        verticalAlign='middle'
+        size='mini'
+      >
+        <List.Item>
           {renderAllCategory()}
-      </List.Item>
+        </List.Item>
         {categories.map((category, index) => {
           return (
             <List.Item key={index}>

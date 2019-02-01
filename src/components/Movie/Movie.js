@@ -31,7 +31,7 @@ const movie = ({ movies, searchResult, activeCategoryId }) => (
       })
       .map(item => {
         return (
-          <Card centered={true} key={item.id} style={{ minWidth: 250 }}>
+          <Card centered={true} key={item.id} style={{ minWidth: 120 }}>
             <Link to={`/movie/${item.id}`}>
               <Image
                 fluid

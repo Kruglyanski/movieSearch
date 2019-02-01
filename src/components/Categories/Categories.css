@@ -1,3 +1,8 @@
 .active, .active:hover {
     color: #000;
 }
+.category-wrap {
+
+    margin: 0 auto;
+    padding-bottom: 180px;
+}
