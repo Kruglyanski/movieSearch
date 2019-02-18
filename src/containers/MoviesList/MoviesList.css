@@ -93,3 +93,7 @@
   margin: 6vh auto;
   position: relative;
 }
+
+.ui.five.cards>.card{
+  font-size: calc(2px + 1.5vmin);
+}
