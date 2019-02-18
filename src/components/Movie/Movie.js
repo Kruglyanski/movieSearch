@@ -57,7 +57,7 @@ const movie = ({ movies, searchResult, activeCategoryId }) => (
 movie.propTypes = {
   movies: PropTypes.instanceOf(Array),
   searchResult: PropTypes.string.isRequired,
-  activeCategoryId: PropTypes.number || null,
+  activeCategoryId: PropTypes.string,
 }
 
 export default movie

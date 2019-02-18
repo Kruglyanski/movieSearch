@@ -115,7 +115,7 @@ MoviesList.propTypes = {
   movies: PropTypes.instanceOf(Array),
   searchResult: PropTypes.string.isRequired,
   page: PropTypes.number || null,
-  activeCategoryId: PropTypes.number, //??????????
+  activeCategoryId: PropTypes.string, //??????????
 }
 
 export default connect(

@@ -12,6 +12,8 @@ import {getCategoriesList} from '../../selectors/movies'
 import {getActiveCategoryId} from '../../selectors/movies'
 
 import './Categories.css'
+import PropTypes from "prop-types";
+
 
 const Categories = ({categories, activeCategoryId}) => {
   console.log('activeCategoryId', activeCategoryId)
@@ -51,7 +53,6 @@ const Categories = ({categories, activeCategoryId}) => {
 
   return (
     <div className="category-wrap">
-      <h3>Filter by genres:</h3>
       <List
         selection
         verticalAlign='middle'
@@ -77,7 +78,10 @@ const mapStateToProps = (state, ownProps) => ({
   activeCategoryId: getActiveCategoryId(ownProps),
 
 })
-
+Categories.propTypes = {
+    categories: PropTypes.instanceOf(Object),
+    activeCategoryId: PropTypes.string,
+}
 export default compose(
   withRouter,
   connect(mapStateToProps, null)

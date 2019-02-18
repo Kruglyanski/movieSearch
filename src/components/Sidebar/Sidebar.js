@@ -1,8 +1,8 @@
 import React from 'react'
-import { Input, Sidebar } from 'semantic-ui-react'
+import { Sidebar } from 'semantic-ui-react'
 import './Sidebar.css'
 import Categories from '../Categories/Categories'
-import PropTypes from 'prop-types'
+
 
 class SidebarDiv extends React.Component  {
   render() {
@@ -14,7 +14,5 @@ class SidebarDiv extends React.Component  {
     )
   }
 }
-Sidebar.propTypes = {
-  onInputChangeProp: PropTypes.string,
-}
+
 export default SidebarDiv

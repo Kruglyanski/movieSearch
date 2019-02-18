@@ -4,6 +4,7 @@ import 'babel-polyfill'
 // redux
 import { createActions } from 'redux-actions'
 
+
 const actions = createActions({
   categories: {
     success: x => x,

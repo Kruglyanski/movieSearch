@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './Layout.css'
-import {Input, Sidebar} from 'semantic-ui-react'
+import {Input} from 'semantic-ui-react'
 
 export default class Layout extends Component {
   render() {
@@ -17,7 +17,6 @@ export default class Layout extends Component {
             onChange={this.props.onInputChangeProp} />
         </section>
         <section className="layout-content">{this.props.children}</section>
-        <footer className="layout-footer"></footer>
       </div>
     )
   }
@@ -25,5 +24,5 @@ export default class Layout extends Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  onInputChangeProp: PropTypes.string,
+  onInputChangeProp: PropTypes.func,
 }
